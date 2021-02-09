@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-toggler-right custom-button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
                 </button>
@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About Me</h2>
-                    <h3 class="section-subheading text-muted">Here's a little something about my journey so far</h3>
+                    <h3 class="section-subheading">Here's a little something about my journey so far</h3><hr>
                 </div>
                 <ul class="timeline">
                     <li>
@@ -150,7 +150,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase text-white">Projects</h2>
-                    <h3 class="section-subheading text-muted">Please click on any of the following to learn more about my projects</h3>
+                    <h3 class="section-subheading text-muted">Please click on any of the following to learn more about my projects</h3><hr class="hr-white">
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -245,7 +245,7 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                     <div class="text-center">
-                            <h2 class="section-heading text-uppercase">Skillset</h2><br>
+                            <h2 class="section-heading text-uppercase">Skillset</h2><hr><br>
                             <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --><br>
                     </div>
                     <div class = "row" style = "align-content: center;">
@@ -325,9 +325,33 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Please feel free to drop me a message</h3>
+                    <h3 class="section-subheading text-white">Please feel free to drop me a message</h3><hr class="hr-white">
                 </div>
-                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                
+                <form action="https://getform.io/f/4b6d4c39-7e1b-41b0-bacb-bbb4d2f144a2" method="POST">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div>
+                                <input class="custom-contact-general" type="text" name="name" required="required" placeholder="Your Name *">
+                            </div><br>
+                            <div>
+                                <input class="custom-contact-general" type="email" name="email" required="required" placeholder="Your Email *">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="custom-contact-message" classtype="text" name="message" required="required" placeholder="Your Message *">
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="text-center" style="align: center; padding-top: 10%;">
+                                <div id="success"></div>
+                                <button class="btn btn-primary btn-xl text-uppercase custom-button" id="sendMessageButton" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </div>                  
+                </form>
+
+                <!-- <form id="contactForm" name="sentMessage" novalidate="novalidate" action="contactform.php" action="https://getform.io/f/4b6d4c39-7e1b-41b0-bacb-bbb4d2f144a2" method="POST">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -354,7 +378,7 @@
                         <div id="success"></div>
                         <button class="btn btn-primary btn-xl text-uppercase custom-button" id="sendMessageButton" type="submit">Send Message</button>
                     </div>
-                </form>
+                </form> -->
             </div>
         </section>
         <!-- Footer-->
@@ -363,7 +387,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-left">Copyright © Atharva Tipre 2021</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        <a class="btn btn-dark btn-social mx-2" href="https://public.tableau.com/profile/atharva.tipre#!/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="25" height="25"
                             viewBox="0 0 172 172"
                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#343a40"></path><g fill="#ffffff"><path d="M81.872,16.856v12.384h-11.008v5.504h11.008v12.384h5.504v-12.384h11.008v-5.504h-11.008v-12.384zM47.472,30.616v16.512h-16.512v5.504h16.512v16.512h5.504v-16.512h16.512v-5.504h-16.512v-16.512zM116.272,30.616v16.512h-16.512v5.504h16.512v16.512h5.504v-16.512h16.512v-5.504h-16.512v-16.512zM80.496,60.888v19.264h-19.264v8.256h19.264v19.264h8.256v-19.264h19.264v-8.256h-19.264v-19.264zM30.96,69.144v12.384h-11.008v5.504h11.008v12.384h5.504v-12.384h11.008v-5.504h-11.008v-12.384zM135.536,69.144v12.384h-11.008v5.504h11.008v12.384h5.504v-12.384h11.008v-5.504h-11.008v-12.384zM47.472,96.664v16.512h-16.512v5.504h16.512v16.512h5.504v-16.512h16.512v-5.504h-16.512v-16.512zM116.272,96.664v16.512h-16.512v5.504h16.512v16.512h5.504v-16.512h16.512v-5.504h-16.512v-16.512zM81.872,121.432v12.384h-11.008v5.504h11.008v12.384h5.504v-12.384h11.008v-5.504h-11.008v-12.384z"></path></g></g></svg></i></a>
