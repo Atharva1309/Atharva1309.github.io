@@ -426,6 +426,13 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.hr-white {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255);
+}
+
 small,
 .small {
   font-size: 80%;
@@ -9986,7 +9993,7 @@ p {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 .page-section h2.section-heading {
   font-size: 2.5rem;
@@ -9998,7 +10005,6 @@ p {
   font-weight: 400;
   font-style: italic;
   font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  margin-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -10054,7 +10060,7 @@ img::-moz-selection {
   padding: 0.75rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.75rem;
-  color: #fff;
+  color: #0b0b4d;
   text-transform: uppercase;
   background-color: #fed136;
   border: 0;
@@ -10271,6 +10277,7 @@ header.masthead .masthead-heading {
   clear: both;
 }
 .timeline > li .timeline-panel {
+  margin-top: 5rem;
   position: relative;
   float: right;
   width: 100%;
@@ -10482,4 +10489,28 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.custom-button {
+  color: #0b0b4d;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.custom-border {
+  border-radius: 50px;
+}
+
+.custom-contact-general {
+  border-radius: 5px;
+  height: 80%;
+  width: 100%;
+}
+
+.custom-contact-message{
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
