@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atharva Tipre — Analytics Engineer</title>
+<meta name="description" content="Atharva Tipre — Analytics Engineer specializing in data pipelines, cloud infrastructure, and BI at scale.">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --bg:#fbfbfd;
+    --bg-card:#ffffff;
+    --bg-dark:#000000;
+    --bg-dark-alt:#0a0a0c;
+    --text:#1d1d1f;
+    --text-secondary:#6e6e73;
+    --text-light:#f5f5f7;
+    --text-light-secondary:#a1a1a6;
+    --accent:#0071e3;
+    --accent-hover:#0077ed;
+    --border:#d2d2d7;
+    --border-dark:#2c2c2e;
+    --radius:18px;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font);
+    background:var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,251,253,0.8);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:0.5px solid var(--border);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;max-width:1100px;}
+  .nav-name{font-size:14px;font-weight:600;letter-spacing:-0.01em;}
+  .nav-links{display:flex;gap:32px;list-style:none;}
+  .nav-links a{font-size:12px;color:var(--text);opacity:0.85;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    font-size:12px;background:var(--text);color:#fff;padding:7px 16px;border-radius:980px;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:#000;}
+
+  /* HERO */
+  .hero{
+    padding:160px 24px 120px;
+    text-align:center;
+    background:linear-gradient(180deg,#fbfbfd 0%,#fbfbfd 100%);
+  }
+  .hero-avatar{
+    width:128px;height:128px;border-radius:50%;object-fit:cover;
+    margin:0 auto 28px;display:block;
+    box-shadow:0 8px 30px rgba(0,0,0,0.12);
+    border:3px solid #fff;
+  }
+  .eyebrow{
+    font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.02em;margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(40px,7vw,80px);
+    font-weight:700;
+    letter-spacing:-0.03em;
+    line-height:1.05;
+    margin-bottom:20px;
+  }
+  .hero p{
+    font-size:clamp(18px,2.4vw,26px);
+    color:var(--text-secondary);
+    font-weight:400;
+    max-width:640px;
+    margin:0 auto 40px;
+    letter-spacing:-0.005em;
+  }
+  .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:90px;}
+  .btn-primary,.btn-secondary{
+    font-size:17px;padding:12px 28px;border-radius:980px;font-weight:400;transition:all .2s;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-hover);}
+  .btn-secondary{color:var(--accent);}
+  .btn-secondary:hover{text-decoration:underline;}
+
+  .pulse-line{
+    width:100%;max-width:800px;height:60px;margin:0 auto;
+  }
+  .pulse-line svg{width:100%;height:100%;display:block;}
+  .pulse-path{
+    fill:none;stroke:var(--accent);stroke-width:1.5;
+    stroke-dasharray:1200;stroke-dashoffset:1200;
+    animation:draw 2.4s ease-out forwards, glow 3s ease-in-out 2.4s infinite;
+  }
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes glow{0%,100%{opacity:1;}50%{opacity:0.55;}}
+
+  /* SECTION LABELS */
+  .section-label{
+    font-size:13px;font-weight:600;color:var(--accent);letter-spacing:0.03em;text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .section-head{text-align:center;padding:0 24px;margin-bottom:64px;}
+  .section-head h2{
+    font-size:clamp(32px,4.5vw,52px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;
+  }
+  .section-head p{font-size:19px;color:var(--text-secondary);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;}
+
+  section{padding:120px 0;}
+
+  /* IMPACT STRIP */
+  .impact{
+    background:var(--bg-dark);color:var(--text-light);padding:80px 0;
+  }
+  .impact-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center;
+  }
+  .impact-item{padding:0 20px;border-left:0.5px solid var(--border-dark);}
+  .impact-item:first-child{border-left:none;}
+  .impact-num{font-size:clamp(34px,4vw,52px);font-weight:700;letter-spacing:-0.02em;color:#fff;}
+  .impact-label{font-size:14px;color:var(--text-light-secondary);margin-top:8px;letter-spacing:-0.005em;}
+
+  /* EXPERIENCE */
+  .exp-item{
+    display:grid;grid-template-columns:220px 1fr;gap:48px;
+    padding:48px 0;border-top:0.5px solid var(--border);
+  }
+  .exp-item:last-child{border-bottom:0.5px solid var(--border);}
+  .exp-meta{position:sticky;top:80px;align-self:start;}
+  .exp-role{font-size:22px;font-weight:600;letter-spacing:-0.01em;margin-bottom:4px;}
+  .exp-org{font-size:16px;color:var(--accent);font-weight:500;margin-bottom:6px;}
+  .exp-dates{font-size:14px;color:var(--text-secondary);}
+  .exp-body ul{list-style:none;}
+  .exp-body li{
+    font-size:16px;line-height:1.6;color:var(--text);padding-left:20px;position:relative;margin-bottom:14px;
+  }
+  .exp-body li::before{
+    content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent);
+  }
+  .exp-body b{font-weight:600;}
+
+  /* PROJECTS */
+  .projects-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .proj-card{
+    background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);
+    padding:32px 28px;transition:transform .3s, box-shadow .3s;
+  }
+  .proj-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08);}
+  .proj-icon{
+    width:44px;height:44px;border-radius:12px;background:rgba(0,113,227,0.1);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .proj-icon svg{width:22px;height:22px;stroke:var(--accent);}
+  .proj-card h3{font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;}
+  .proj-card p{font-size:15px;line-height:1.55;color:var(--text-secondary);}
+
+  /* SKILLS */
+  .skills-dark{background:var(--bg-dark);color:var(--text-light);}
+  .skills-dark .section-head p{color:var(--text-light-secondary);}
+  .skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border-dark);border:0.5px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;}
+  .skill-group{background:var(--bg-dark-alt);padding:32px;}
+  .skill-group h4{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:0.02em;text-transform:uppercase;margin-bottom:16px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .skill-tag{
+    font-size:13px;color:var(--text-light);background:rgba(255,255,255,0.08);
+    padding:6px 12px;border-radius:980px;border:0.5px solid rgba(255,255,255,0.12);
+  }
+
+  /* EDUCATION */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .edu-card{
+    border:0.5px solid var(--border);border-radius:var(--radius);padding:32px;background:var(--bg-card);
+  }
+  .edu-card h3{font-size:19px;font-weight:600;margin-bottom:6px;}
+  .edu-card .edu-loc{font-size:14px;color:var(--text-secondary);margin-bottom:12px;}
+  .edu-card .edu-note{font-size:14px;color:var(--accent);font-weight:500;}
+
+  /* CONTACT */
+  .contact{
+    background:var(--bg-dark);color:var(--text-light);text-align:center;padding:140px 24px;
+  }
+  .contact h2{font-size:clamp(34px,5vw,56px);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .contact p{font-size:19px;color:var(--text-light-secondary);max-width:520px;margin:0 auto 44px;}
+  .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .contact-links a{
+    font-size:17px;padding:12px 28px;border-radius:980px;border:0.5px solid rgba(255,255,255,0.3);
+    transition:all .2s;
+  }
+  .contact-links a.primary{background:var(--accent);border-color:var(--accent);}
+  .contact-links a.primary:hover{background:var(--accent-hover);}
+  .contact-links a:not(.primary):hover{background:rgba(255,255,255,0.08);}
+
+  footer{
+    background:var(--bg-dark);color:var(--text-light-secondary);text-align:center;
+    padding:28px 24px;font-size:12px;border-top:0.5px solid var(--border-dark);
+  }
+
+  [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].visible{opacity:1;transform:translateY(0);}
+
+  @media (max-width:820px){
+    .exp-item{grid-template-columns:1fr;gap:16px;}
+    .exp-meta{position:static;}
+    .impact-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;}
+    .impact-item:nth-child(3){border-left:none;}
+    .projects-grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    .edu-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="nav-name">Atharva Tipre</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="headshot.png" alt="Atharva Tipre" class="hero-avatar">
+  <div class="eyebrow">Analytics Engineer · Seattle, WA</div>
+  <h1>I turn messy data<br>into systems people trust.</h1>
+  <p>Building resilient pipelines, observability, and dashboards across AWS, Snowflake, and Spark — currently at J.P. Morgan Chase.</p>
+  <div class="hero-actions">
+    <a href="#experience" class="btn-primary">View my work ↓</a>
+    <a href="resume.pdf" class="btn-secondary">Download resume →</a>
+  </div>
+  <div class="pulse-line">
+    <svg viewBox="0 0 800 60" preserveAspectRatio="none">
+      <path class="pulse-path" d="M0,30 L160,30 L185,10 L205,50 L225,15 L245,45 L265,30 L400,30 L425,8 L448,52 L470,20 L495,40 L515,30 L800,30"/>
+    </svg>
+  </div>
+</header>
+
+<section class="impact" data-reveal>
+  <div class="wrap impact-grid">
+    <div class="impact-item">
+      <div class="impact-num">50%</div>
+      <div class="impact-label">Fewer critical pipeline incidents</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num">$10M+</div>
+      <div class="impact-label">Business value from analytics work</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num">10M+</div>
+      <div class="impact-label">Customer records modeled</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num">4</div>
+      <div class="impact-label">Teams unified on shared data infra</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-head" data-reveal>
+    <div class="section-label">Experience</div>
+    <h2>Where I've built.</h2>
+  </div>
+  <div class="wrap">
+
+    <div class="exp-item" data-reveal>
+      <div class="exp-meta">
+        <div class="exp-role">Sr. Analytics Engineer</div>
+        <div class="exp-org">J.P. Morgan Chase — AIML Solutions</div>
+        <div class="exp-dates">Oct 2024 – Present · Seattle, WA</div>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Designed a proactive data quality and observability framework across AWS Athena, Snowflake, and S3 — <b>20+ production alerts</b>, cutting critical pipeline incidents by <b>50%</b> and JIRA turnaround from 10 to under 5 days.</li>
+          <li>Built a centralized SQL query repository that cut recurring data questions by <b>60–70%</b> and accelerated business reporting by <b>25%</b>.</li>
+          <li>Led the Tableau Cloud migration for 100% of AIML dashboards, cutting load times from 40–50s to under 10s — the migration playbook became the org-wide standard.</li>
+          <li>Engineered 7+ data health monitoring dashboards, giving four AIML teams sub-5-minute visibility into pipeline health.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" data-reveal>
+      <div class="exp-meta">
+        <div class="exp-role">Analytics Engineer</div>
+        <div class="exp-org">J.P. Morgan Chase — Real Time Analytics</div>
+        <div class="exp-dates">Jul 2022 – Sep 2024 · Seattle, WA</div>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Rebuilt cross-channel customer journey analytics, expanding coverage from 5 to 10+ channels and growing the analytics user base from 2 to 15 partners — roughly <b>$10M</b> in identified value.</li>
+          <li>Built and deployed a propensity scoring model on <b>10M+</b> customer records — cutting campaign costs by 40% and lifting sign-up rates from ~20% to ~50%.</li>
+          <li>Redesigned Alteryx ETL pipelines with a staging layer, eliminating cascading timeouts and improving speed-to-market by <b>50%</b> across 20 downstream pipelines.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" data-reveal>
+      <div class="exp-meta">
+        <div class="exp-role">Associate Analyst</div>
+        <div class="exp-org">Essilor Luxottica — Strategic Pricing</div>
+        <div class="exp-dates">Jul 2021 – Jun 2022 · Dallas, TX</div>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Engineered an AWS S3 batch ETL pipeline and self-serve rebate dashboard, cutting investigation time by 50%+ and recovering ~<b>$120K</b> in missed rebates across 30K+ accounts.</li>
+          <li>Built customer segmentation and pricing models generating ~$1.5M in projected promotional revenue.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-head" data-reveal>
+    <div class="section-label">Projects</div>
+    <h2>What I build on the side.</h2>
+  </div>
+  <div class="wrap projects-grid">
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM4 10h10v10H4zM16 10h4v10h-4z"/></svg></div>
+      <h3>Calendar Optimization Pipeline</h3>
+      <p>End-to-end AWS pipeline ingesting 1–100GB of scheduling records, processed with PySpark on EMR, Delta Lake for ACID storage, and orchestrated via Airflow — 50%+ faster through partition and cluster tuning.</p>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+      <h3>Automated Job Search Pipeline</h3>
+      <p>Personal automation using n8n, Apify, Gemini AI, Supabase, and LaTeX — scrapes daily postings and generates tailored documents, saving 3+ hours of manual research weekly.</p>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      <h3>Bank Marketing Analysis</h3>
+      <p>Five classification models on 50K records with scikit-learn and GridSearchCV hyperparameter tuning, reaching 91% test accuracy for campaign targeting.</p>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div>
+      <h3>Instacart Market Basket Analysis</h3>
+      <p>EDA and ensemble methods (LightGBM, XGBoost) on 3M+ orders from 200K users, predicting reorder probability at 90% accuracy.</p>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3>Amazon Shipping Analytics</h3>
+      <p>Interactive Tableau dashboards over 2+ years of global shipment data with drill-down filters and geo-mapping to surface fulfillment issues.</p>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
+      <h3>OCR Data Extraction</h3>
+      <p>Python and OpenCV pipelines converting digitized and non-digitized documents into structured, analytics-ready data — cutting client operational cost by 30%.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="skills-dark">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="section-label">Skills</div>
+      <h2>The toolkit.</h2>
+    </div>
+    <div class="skill-groups" data-reveal>
+      <div class="skill-group">
+        <h4>Programming & Data Engineering</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">PySpark</span>
+          <span class="skill-tag">Spark SQL</span><span class="skill-tag">R</span><span class="skill-tag">ETL/ELT</span>
+          <span class="skill-tag">Data Pipelines</span><span class="skill-tag">Data Quality</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud & Infrastructure</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS Athena</span><span class="skill-tag">S3</span><span class="skill-tag">Glue</span>
+          <span class="skill-tag">Lambda</span><span class="skill-tag">EMR</span><span class="skill-tag">Step Functions</span>
+          <span class="skill-tag">Apache Kafka</span><span class="skill-tag">Git</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data Platforms & Warehousing</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Snowflake</span><span class="skill-tag">Redshift</span><span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Dimensional Modeling</span><span class="skill-tag">Star Schema</span><span class="skill-tag">CDC</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>BI & Visualization</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Alteryx</span>
+          <span class="skill-tag">Adobe Analytics</span><span class="skill-tag">Airflow (MWAA)</span><span class="skill-tag">KPI Reporting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-head" data-reveal>
+    <div class="section-label">Education</div>
+    <h2>Foundations.</h2>
+  </div>
+  <div class="wrap edu-grid">
+    <div class="edu-card" data-reveal>
+      <h3>M.S. Business Analytics — Data Science</h3>
+      <div class="edu-loc">The University of Texas at Dallas · Dallas, TX</div>
+      <div class="edu-note">Dean's Excellence Scholarship, Naveen Jindal School of Management</div>
+    </div>
+    <div class="edu-card" data-reveal>
+      <h3>B.E. Electronics — Computer Engineering</h3>
+      <div class="edu-loc">Mumbai University · Mumbai, India</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact" data-reveal>
+  <h2>Let's build something reliable.</h2>
+  <p>Open to conversations about analytics engineering, data platforms, and roles where data needs to be trusted.</p>
+  <div class="contact-links">
+    <a href="mailto:atharvatipre13@gmail.com" class="primary">Email me</a>
+    <a href="https://linkedin.com/in/atharva-tipre" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="tel:2146045921">214.604.5921</a>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Atharva Tipre. Built with intent, hosted on GitHub Pages.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
