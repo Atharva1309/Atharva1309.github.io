@@ -157,8 +157,17 @@
   .proj-card{
     background:var(--bg-card);border:0.5px solid var(--border);border-radius:var(--radius);
     padding:32px 28px;transition:transform .3s, box-shadow .3s;
+    display:block;position:relative;
   }
   .proj-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08);}
+  a.proj-card{cursor:pointer;}
+  a.proj-card:hover .proj-arrow{opacity:1;transform:translate(0,0);}
+  .proj-arrow{
+    position:absolute;top:28px;right:28px;width:16px;height:16px;color:var(--text-secondary);
+    opacity:0;transform:translate(-4px,4px);transition:all .25s;
+  }
+  .proj-card.disabled{opacity:0.6;}
+  .proj-status{font-size:12px;color:var(--text-secondary);font-weight:500;margin-top:12px;display:block;}
   .proj-icon{
     width:44px;height:44px;border-radius:12px;background:rgba(0,113,227,0.1);
     display:flex;align-items:center;justify-content:center;margin-bottom:20px;
@@ -337,41 +346,47 @@
   </div>
   <div class="wrap projects-grid">
 
-    <div class="proj-card" data-reveal>
+    <a class="proj-card" data-reveal href="https://github.com/Atharva1309/nyc-tlc-emr-pipeline" target="_blank" rel="noopener">
+      <svg class="proj-arrow" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM4 10h10v10H4zM16 10h4v10h-4z"/></svg></div>
       <h3>NYC TLC Trip Data Pipeline with AI Layer</h3>
       <p>Solo batch pipeline on AWS EMR Serverless and PySpark processing 9.5M+ NYC taxi trip records into partitioned Parquet via Glue and Athena, cutting query scans to 5.76 MB — extended with a Claude-powered NL-to-SQL layer and automated anomaly triage.</p>
-    </div>
+    </a>
 
-    <div class="proj-card" data-reveal>
+    <div class="proj-card disabled" data-reveal>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
       <h3>Automated Job Search Pipeline</h3>
       <p>Personal automation using n8n, Apify, Gemini AI, Supabase, and LaTeX — scrapes daily postings and generates tailored documents, saving 3+ hours of manual research weekly.</p>
+      <span class="proj-status">Repo private — coming soon</span>
     </div>
 
-    <div class="proj-card" data-reveal>
+    <a class="proj-card" data-reveal href="https://github.com/Atharva1309/Bank-Marketing-Analysis" target="_blank" rel="noopener">
+      <svg class="proj-arrow" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
       <h3>Bank Marketing Analysis</h3>
       <p>Five classification models on 50K records with scikit-learn and GridSearchCV hyperparameter tuning, reaching 91% test accuracy for campaign targeting.</p>
-    </div>
+    </a>
 
-    <div class="proj-card" data-reveal>
+    <a class="proj-card" data-reveal href="https://github.com/Atharva1309/Instacart-Market-Basket-Analysis" target="_blank" rel="noopener">
+      <svg class="proj-arrow" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div>
       <h3>Instacart Market Basket Analysis</h3>
       <p>EDA and ensemble methods (LightGBM, XGBoost) on 3M+ orders from 200K users, predicting reorder probability at 90% accuracy.</p>
-    </div>
+    </a>
 
-    <div class="proj-card" data-reveal>
+    <a class="proj-card" data-reveal href="https://github.com/Atharva1309/Amazon-Shipping-Analytics" target="_blank" rel="noopener">
+      <svg class="proj-arrow" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
       <h3>Amazon Shipping Analytics</h3>
       <p>Interactive Tableau dashboards over 2+ years of global shipment data with drill-down filters and geo-mapping to surface fulfillment issues.</p>
-    </div>
+    </a>
 
-    <div class="proj-card" data-reveal>
+    <a class="proj-card" data-reveal href="https://github.com/Atharva1309/OCR_template" target="_blank" rel="noopener">
+      <svg class="proj-arrow" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       <div class="proj-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
       <h3>OCR Data Extraction</h3>
       <p>Python and OpenCV pipelines converting digitized and non-digitized documents into structured, analytics-ready data — cutting client operational cost by 30%.</p>
-    </div>
+    </a>
 
   </div>
 </section>
@@ -441,6 +456,7 @@
   <div class="contact-links">
     <a href="mailto:atharvatipre13@gmail.com" class="primary">Email me</a>
     <a href="https://linkedin.com/in/atharva-tipre" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Atharva1309" target="_blank" rel="noopener">GitHub</a>
     <a href="tel:2146045921">214.604.5921</a>
   </div>
 </section>
